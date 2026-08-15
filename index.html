@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Electronic Component Testing System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Electronic Component Testing System</h1>
+        <p>Component Inventory & Testing Dashboard</p>
+    </header>
+
+    <div class="container">
+
+        <!-- Dashboard -->
+        <section class="dashboard">
+
+            <div class="card">
+                <h3>Total Components</h3>
+                <p id="totalComponents">0</p>
+            </div>
+
+            <div class="card pass-card">
+                <h3>Passed</h3>
+                <p id="passedComponents">0</p>
+            </div>
+
+            <div class="card fail-card">
+                <h3>Failed</h3>
+                <p id="failedComponents">0</p>
+            </div>
+
+        </section>
+
+
+        <!-- Component Testing Form -->
+        <section class="form-section">
+
+            <h2>Test Component</h2>
+
+            <form id="componentForm">
+
+                <div class="form-group">
+                    <label>Component ID</label>
+                    <input type="text" id="componentId" placeholder="Example: R101" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Component Name</label>
+                    <input type="text" id="componentName" placeholder="Example: 1K Resistor" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Component Type</label>
+
+                    <select id="componentType" required>
+                        <option value="">Select Type</option>
+                        <option value="Resistor">Resistor</option>
+                        <option value="Capacitor">Capacitor</option>
+                        <option value="Diode">Diode</option>
+                        <option value="LED">LED</option>
+                        <option value="Transistor">Transistor</option>
+                        <option value="IC">IC</option>
+                        <option value="Sensor">Sensor</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Rated Value</label>
+                    <input type="number" id="ratedValue" placeholder="Example: 1000" step="any" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Measured Value</label>
+                    <input type="number" id="measuredValue" placeholder="Example: 998" step="any" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Tolerance (%)</label>
+                    <input type="number" id="tolerance" value="5" step="any" required>
+                </div>
+
+                <button type="submit">Test Component</button>
+
+            </form>
+
+        </section>
+
+
+        <!-- Result -->
+        <section class="result-section">
+
+            <h2>Test Result</h2>
+
+            <div id="resultBox">
+                Enter component details and click
+                <strong>Test Component</strong>.
+            </div>
+
+        </section>
+
+
+        <!-- Component Table -->
+        <section class="table-section">
+
+            <div class="table-header">
+                <h2>Component Records</h2>
+
+                <button id="clearButton" class="clear-btn">
+                    Clear All
+                </button>
+            </div>
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Rated</th>
+                            <th>Measured</th>
+                            <th>Error</th>
+                            <th>Result</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="componentTable">
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <footer>
+        <p>Electronic Component Testing System | HTML CSS JavaScript</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
